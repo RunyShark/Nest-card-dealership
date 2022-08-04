@@ -26,4 +26,8 @@ export class CarsService {
   findAll() {
     return this.cars;
   }
+
+  findOnenById(id) {
+    return this.cars[id];
+  }
 }

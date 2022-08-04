@@ -12,7 +12,7 @@ export class CarsController {
   @Get(':id')
   getCardById(@Param('id') id) {
     return {
-      car: this.carsService.findAll()[+id],
+      car: this.carsService.findOnenById(id),
     };
   }
 }
