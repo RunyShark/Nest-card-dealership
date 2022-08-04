@@ -27,7 +27,8 @@ export class CarsService {
     return this.cars;
   }
 
-  findOnenById(id) {
-    return this.cars[id];
+  findOnenById(id: number) {
+    const car = this.cars.find((car) => car.id === id);
+    return car;
   }
 }

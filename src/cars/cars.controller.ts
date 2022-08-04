@@ -10,9 +10,9 @@ export class CarsController {
   }
 
   @Get(':id')
-  getCardById(@Param('id') id) {
+  getCardById(@Param('id') id: string) {
     return {
-      car: this.carsService.findOnenById(id),
+      car: this.carsService.findOnenById(+id),
     };
   }
 }
