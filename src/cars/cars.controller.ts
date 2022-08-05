@@ -36,7 +36,7 @@ export class CarsController {
   }
 
   @Patch(':id')
-  UpdateCar(@Body() id: number, car: Cars) {
+  UpdateCar(@Param('id', ParseIntPipe) id: number, @Body() car: Cars) {
     return 'Patch';
   }
 
