@@ -59,6 +59,7 @@ export class CarsService {
   }
 
   deleteCar(id: string) {
-    //this.cars.slice(id);
+    this.cars = this.cars.filter((car) => car.id !== id);
+    return this.cars;
   }
 }
