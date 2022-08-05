@@ -6,21 +6,11 @@ import { CreateCarDto, UpdateCarDto } from './dtos';
 @Injectable()
 export class CarsService {
   private cars: Car[] = [
-    {
-      id: 'a6481146-b03a-4109-9166-731f175ec6bd',
-      brand: 'Toyota',
-      model: 'Corolla',
-    },
-    {
-      id: '384d5e42-d515-4328-85f5-9349ff199f37',
-      brand: 'Ford',
-      model: 'Mustang',
-    },
-    {
-      id: '45836168-4461-4b65-9862-9bf1d0c6ff96',
-      brand: 'Lambrohini',
-      model: 'Infirno',
-    },
+    // {
+    //   id: 'a6481146-b03a-4109-9166-731f175ec6bd',
+    //   brand: 'Toyota',
+    //   model: 'Corolla',
+    // },
   ];
   findAll() {
     return this.cars;
