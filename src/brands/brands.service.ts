@@ -15,9 +15,11 @@ export class BrandsService {
   ];
 
   create(createBrandDto: CreateBrandDto) {
-    const brand = {
+    const { name } = createBrandDto;
+    const brand: Brand = {
       id: uuid(),
-      ...createBrandDto,
+      name: name.toLowerCase(),
+      createdAt: new Date().getTime(),
     };
     this.brands.push(brand);
     return brand;
@@ -34,13 +36,13 @@ export class BrandsService {
   }
 
   update(id: string, updateBrandDto: UpdateBrandDto) {
-    const updateBrand = this.findOne(id);
+    let updateBrand = this.findOne(id);
     this.brands = this.brands.map((brand) => {
       if (brand.id === updateBrand.id) {
+        updateBrand.updatedAt = new Date().getTime();
         updateBrand = {
           ...updateBrand,
-          ...UpdateBrandDto,
-          id,
+          ...updateBrandDto,
         };
         return updateBrand;
       }
