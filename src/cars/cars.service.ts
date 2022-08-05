@@ -43,8 +43,19 @@ export class CarsService {
     return car;
   }
 
-  putCar(id, update: UpdateCarDto) {
-    const updateCar = this.cars.find((car) => car.id === id);
+  putCar(id: string, update: UpdateCarDto) {
+    let updateCar = this.findOnenById(id);
+    this.cars = this.cars.map((car) => {
+      if (car.id === update.id) {
+        updateCar = {
+          ...updateCar,
+          ...UpdateCarDto,
+          id,
+        };
+        return updateCar;
+      }
+      return car;
+    });
   }
 
   deleteCar(id: string) {
